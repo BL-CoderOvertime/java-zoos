@@ -11,10 +11,14 @@ class Animal{
 
     var animalName = ""
 
-//TODO: Setup relational database type i.e. manyToOne/oneToMany/ManyToMany
+    @ManyToMany(mappedBy = "zoo")
+    var zoo = Zoo()
 
     constructor()
 
-    //TODO: Setup Constructor when all data is relational data is set
+    constructor(animalName: String) {
+        this.animalName = animalName
+    }
+
 
 }
