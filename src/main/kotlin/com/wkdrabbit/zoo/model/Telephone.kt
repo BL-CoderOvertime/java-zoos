@@ -12,9 +12,16 @@ class Telephone{
     var telephoneType = ""
     var telephoneNumber = 0
 
-    //TODO: Setup relational database type i.e. manyToOne/oneToMany/ManyToMany
+    @ManyToOne
+    @JoinColumn(name = "zooid")
+    var zoo = Zoo()
 
     constructor()
 
-    //TODO: Setup Constructor when all data is relational data is set
+    constructor(telephoneType: String, telephoneNumber: Int) {
+        this.telephoneType = telephoneType
+        this.telephoneNumber = telephoneNumber
+    }
+
+
 }
