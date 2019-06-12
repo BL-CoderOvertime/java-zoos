@@ -11,11 +11,20 @@ class Zoo{
 
     var zooName = ""
 
-    //TODO: Setup relational database type i.e. manyToOne/oneToMany/ManyToMany
 
+    @OneToMany(mappedBy = "zoo")
+    var telephones = arrayListOf<Telephone>()
+
+    @ManyToMany
+    @JoinTable(name = "zooanimals",
+            joinColumns = [JoinColumn(name = "animalid")],
+            inverseJoinColumns = [JoinColumn(name = "zooid")])
+    var animals = arrayListOf<Animal>()
 
     constructor()
 
+    constructor(zooName: String) {
+        this.zooName = zooName
+    }
 
-    //TODO: Setup Constructor when all data is relational data is set
 }
