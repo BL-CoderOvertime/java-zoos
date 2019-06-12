@@ -10,4 +10,11 @@ class Animal{
     var animalId : Long = 0
 
     var animalName = ""
+
+//TODO: Setup relational database type i.e. manyToOne/oneToMany/ManyToMany
+
+    constructor()
+
+    //TODO: Setup Constructor when all data is relational data is set
+
 }
