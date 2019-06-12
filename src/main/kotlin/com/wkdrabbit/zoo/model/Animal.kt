@@ -7,17 +7,19 @@ import javax.persistence.*
 class Animal{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    var animalId : Long = 0
+    var animalid : Long = 0
 
     var animalName = ""
+    var animaltype = ""
 
-    @ManyToMany(mappedBy = "zoo")
-    var zoo = Zoo()
+/*    @ManyToMany(mappedBy = "zoo")
+    var zoo = Zoo()*/
 
     constructor()
 
-    constructor(animalName: String) {
+    constructor(animalName: String, animaltype : String) {
         this.animalName = animalName
+        this.animaltype = animaltype
     }
 
 

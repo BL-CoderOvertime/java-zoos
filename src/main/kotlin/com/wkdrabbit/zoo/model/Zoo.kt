@@ -7,24 +7,23 @@ import javax.persistence.*
 class Zoo{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    var zooId : Long = 0
+    var zooid : Long = 0
 
-    var zooName = ""
-
+    var zooname = ""
 
     @OneToMany(mappedBy = "zoo")
-    var telephones = arrayListOf<Telephone>()
+    var telephones = listOf<Telephone>()
 
     @ManyToMany
     @JoinTable(name = "zooanimals",
-            joinColumns = [JoinColumn(name = "animalid")],
-            inverseJoinColumns = [JoinColumn(name = "zooid")])
-    var animals = arrayListOf<Animal>()
+            joinColumns = [JoinColumn(name = "zooid")],
+            inverseJoinColumns = [JoinColumn(name = "animalid")])
+    var animals = listOf<Animal>()
 
     constructor()
 
     constructor(zooName: String) {
-        this.zooName = zooName
+        this.zooname = zooName
     }
 
 }

@@ -3,14 +3,14 @@ package com.wkdrabbit.zoo.model
 import javax.persistence.*
 
 @Entity
-@Table(name = "animal")
+@Table(name = "telephone")
 class Telephone{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    var telephoneId : Long = 0
+    var phoneid : Long = 0
 
-    var telephoneType = ""
-    var telephoneNumber = 0
+    var phonetype = ""
+    var phonenumber = ""
 
     @ManyToOne
     @JoinColumn(name = "zooid")
@@ -18,9 +18,9 @@ class Telephone{
 
     constructor()
 
-    constructor(telephoneType: String, telephoneNumber: Int) {
-        this.telephoneType = telephoneType
-        this.telephoneNumber = telephoneNumber
+    constructor(telephoneType: String, telephoneNumber: String) {
+        this.phonetype = telephoneType
+        this.phonenumber = telephoneNumber
     }
 
 

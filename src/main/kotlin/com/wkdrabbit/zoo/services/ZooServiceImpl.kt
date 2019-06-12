@@ -18,7 +18,6 @@ class ZooServiceImpl : ZooService {
 
     override fun findAll(): ArrayList<Zoo> {
         var list = ArrayList<Zoo>()
-        //TODO: Fix this
 
         zooRepos!!.findAll().forEach { list.add(it) }
 
