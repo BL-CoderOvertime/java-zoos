@@ -19,7 +19,10 @@ class ZooServiceImpl : ZooService {
     override fun findAll(): ArrayList<Zoo> {
         var list = ArrayList<Zoo>()
         //TODO: Fix this
-        zooRepos!!.findAll().iterator().forEachRemaining(list::add)
+
+        zooRepos!!.findAll().forEach { list.add(it) }
+
+        return list
     }
 
 
@@ -36,4 +39,6 @@ class ZooServiceImpl : ZooService {
     override fun getCountAnimalsInZoo(): ArrayList<CountAnimalsInZoo> {
         return zooRepos!!.getCountAnimalsInZoo
     }
+
+
 }
