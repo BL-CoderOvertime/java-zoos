@@ -23,6 +23,8 @@ class ZooController{
     @DeleteMapping("/delete/{zooid}")
     fun deleteZooById(@PathVariable zooid: Long):ResponseEntity<*>{
         zooService!!.delete(zooid)
-        return ResponseEntity(HttpStatus.OK)
+        return ResponseEntity<Any>(HttpStatus.OK)
     }
+
+
 }
