@@ -15,9 +15,14 @@ class ZooController{
     @Autowired
     var zooService : ZooService? = null
 
-    @GetMapping(value = "/animalcount")
+    @GetMapping(value = "/animals/count")
     fun getCountAnimalsInZoo():ResponseEntity<*>{
         return ResponseEntity(zooService!!.getCountAnimalsInZoo(), HttpStatus.OK)
+    }
+
+    @GetMapping(value = "/zoos/zoos")
+    fun getZoos():ResponseEntity<*>{
+        return ResponseEntity(zooService!!.findAll(), HttpStatus.OK)
     }
 
     @DeleteMapping("/delete/{zooid}")

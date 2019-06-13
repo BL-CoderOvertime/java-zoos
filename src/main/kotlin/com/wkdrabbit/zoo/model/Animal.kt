@@ -1,5 +1,6 @@
 package com.wkdrabbit.zoo.model
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import javax.persistence.*
 
 @Entity
@@ -12,8 +13,9 @@ class Animal{
     var animalName = ""
     var animaltype = ""
 
-/*    @ManyToMany(mappedBy = "zoo")
-    var zoo = Zoo()*/
+    @ManyToMany(mappedBy = "animals")
+    @JsonIgnoreProperties("animals")
+    var zoos = listOf<Zoo>()
 
     constructor()
 

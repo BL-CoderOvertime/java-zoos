@@ -1,5 +1,6 @@
 package com.wkdrabbit.zoo.model
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import javax.persistence.*
 
 @Entity
@@ -14,6 +15,7 @@ class Telephone{
 
     @ManyToOne
     @JoinColumn(name = "zooid")
+    @JsonIgnoreProperties("telephone")
     var zoo = Zoo()
 
     constructor()
